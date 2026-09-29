@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TUP Journals — Article Index Hub</title>
+<style>
+  :root {
+    --primary: #1a5276;
+    --primary-dark: #0d3a5c;
+    --accent: #e67e22;
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --text: #2c3e50;
+    --text-light: #6c757d;
+    --border: #e9ecef;
+    --shadow: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-hover: 0 8px 25px rgba(0,0,0,0.1);
+    --radius: 12px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    padding: 3.5rem 1rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  header .badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 4px 16px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    position: relative;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+  }
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border: 1px solid var(--border);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+  .card .num {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .card h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.3;
+  }
+  .card .meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+  .card .links {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+  }
+  .card .links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    border: 1px solid;
+  }
+  .card .links a.index { color: var(--accent); border-color: var(--accent); }
+  .card .links a.index:hover { background: var(--accent); color: #fff; }
+  .card .links a.sciopen { color: var(--primary); border-color: var(--primary); }
+  .card .links a.sciopen:hover { background: var(--primary); color: #fff; }
+  .card .links a.github { color: #333; border-color: #333; }
+  .card .links a.github:hover { background: #333; color: #fff; }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
+  }
+  footer a { color: var(--primary); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    header h1 { font-size: 1.8rem; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>TUP Journals</h1>
+  <p>Tsinghua University Press — SciOpen Article Index Hub</p>
+  <span class="badge">13 Journals</span>
+</header>
+
+<div class="container">
+<div class="grid">
+
+  <div class="card">
+    <span class="num">01</span>
+    <h2>Astrodynamics</h2>
+    <div class="meta">ISSN 2522-008X</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Astrodynamics/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2096-8981" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Astrodynamics" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">02</span>
+    <h2>Big Data Mining and Analytics</h2>
+    <div class="meta">ISSN 2096-0654</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/BDMA/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2096-0654" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/BDMA" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">03</span>
+    <h2>Nano Research</h2>
+    <div class="meta">ISSN 1998-0124</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Nano-Research/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/1998-0124" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Nano-Research" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">04</span>
+    <h2>Energy Materials Devices</h2>
+    <div class="meta">ISSN 3005-3315</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Energy_Materials_Devices/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/3005-3315" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Energy_Materials_Devices" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">05</span>
+    <h2>Carbon Future</h2>
+    <div class="meta">ISSN 2960-0561</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Carbon_Future/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2960-0561" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Carbon_Future" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">06</span>
+    <h2>Experimental and Computational Multiphase Flow</h2>
+    <div class="meta">ISSN 2661-8869</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Experimental-and-Computational-Multiphase-Flow/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2096-0654" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Experimental-and-Computational-Multiphase-Flow" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">07</span>
+    <h2>Building Simulation</h2>
+    <div class="meta">ISSN 1996-3599</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Building-Simulation/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/1996-3599" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Building-Simulation" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">08</span>
+    <h2>Communications in Transportation Research</h2>
+    <div class="meta">ISSN 2097-5023</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Communications-in-Transportation-Research/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2772-4247" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Communications-in-Transportation-Research" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">09</span>
+    <h2>Journal of Intelligent and Connected Vehicles</h2>
+    <div class="meta">ISSN 2399-9802</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/JICV/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2096-0654" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/JICV" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">10</span>
+    <h2>Friction</h2>
+    <div class="meta">ISSN 2223-7690</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Friction/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2223-7690" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Friction" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">11</span>
+    <h2>Polyoxometalates</h2>
+    <div class="meta">ISSN 2957-9821</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Polyoxometalates/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2957-9821" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Polyoxometalates" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">12</span>
+    <h2>Food Medicine Homology</h2>
+    <div class="meta">ISSN 3006-6867</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Food-Medicine-Homology/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/3006-6867" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Food-Medicine-Homology" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="num">13</span>
+    <h2>Computational Visual Media</h2>
+    <div class="meta">ISSN 2096-0433</div>
+    <div class="links">
+      <a class="index" href="https://tupjournals.github.io/Computational-Visual-Media/" target="_blank">Article Index</a>
+      <a class="sciopen" href="https://www.sciopen.com/journal/2096-0433" target="_blank">SciOpen</a>
+      <a class="github" href="https://github.com/TUPjournals/Computational-Visual-Media" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <p>Tsinghua University Press &bull; TUPjournals GitHub Organization</p>
+  <p style="margin-top:0.3rem"><a href="https://github.com/TUPjournals" target="_blank">github.com/TUPjournals</a></p>
+</footer>
+
+</body>
+</html>

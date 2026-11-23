@@ -6,9 +6,10 @@
 <title>TUP Journals — Article Index Hub</title>
 <style>
   :root {
-    --primary: #1a5276;
-    --primary-dark: #0d3a5c;
-    --accent: #e67e22;
+    /* 清华紫 Tsinghua Purple — PANTONE 259C / C65 M100 Y0 K20 / R102 G8 B116 */
+    --primary: #660874;
+    --primary-dark: #4b0656;
+    --accent: #a0308f;
     --bg: #f8f9fa;
     --card: #ffffff;
     --text: #2c3e50;
@@ -124,8 +125,8 @@
   .card .links a.index:hover { background: var(--accent); color: #fff; }
   .card .links a.sciopen { color: var(--primary); border-color: var(--primary); }
   .card .links a.sciopen:hover { background: var(--primary); color: #fff; }
-  .card .links a.github { color: #333; border-color: #333; }
-  .card .links a.github:hover { background: #333; color: #fff; }
+  .card .links a.github { color: var(--text-light); border-color: var(--border); }
+  .card .links a.github:hover { background: var(--text-light); border-color: var(--text-light); color: #fff; }
   footer {
     text-align: center;
     padding: 2rem 1rem;
